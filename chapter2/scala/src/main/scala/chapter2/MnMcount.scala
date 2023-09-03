@@ -12,15 +12,16 @@ object MnMcount {
   def main(args: Array[String]) {
     val spark = SparkSession
       .builder
+      .master("local[5]")
       .appName("MnMCount")
       .getOrCreate()
 
-    if (args.length < 1) {
-      print("Usage: MnMcount <mnm_file_dataset>")
-      sys.exit(1)
-    }
+//    if (args.length < 1) {
+//      print("Usage: MnMcount <mnm_file_dataset>")
+//      sys.exit(1)
+//    }
     // get the M&M data set file name
-    val mnmFile = args(0)
+    val mnmFile = "/Users/jp28431/github/tanvn/LearningSparkV2/chapter2/scala/data/mnm_dataset.csv"
     // read the file into a Spark DataFrame
     val mnmDF = spark.read.format("csv")
       .option("header", "true")
