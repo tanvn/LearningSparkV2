@@ -29,6 +29,8 @@ object MnMcount {
       .load(mnmFile)
     // display DataFrame
     mnmDF.show(5, false)
+    mnmDF.rdd.getNumPartitions
+
 
     // aggregate count of all colors and groupBy state and color
     // orderBy descending order
@@ -51,6 +53,9 @@ object MnMcount {
 
     // show the resulting aggregation for California
     caCountMnNDF.show(10)
+
+    val df = spark.sql("select * from table")
+    df.rdd.getNumPartitions
   }
 }
 // scalastyle:on println

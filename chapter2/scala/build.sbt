@@ -7,6 +7,6 @@ scalaVersion := "2.12.18"
 // spark library dependencies 
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % "3.2.4",
-  "org.apache.spark" %% "spark-sql"  % "3.2.4"
+  "org.apache.spark" %% "spark-core" % "3.4.4",
+  "org.apache.spark" %% "spark-sql"  % "3.4.4"
 )
