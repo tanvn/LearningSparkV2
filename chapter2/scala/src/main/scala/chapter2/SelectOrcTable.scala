@@ -17,14 +17,15 @@ object SelectOrcTable {
       .enableHiveSupport()
       .getOrCreate()
 
-    val desc_table = spark.sql("SHOW CREATE TABLE spark_db.users")
-    desc_table.show(false)
+//    val desc_table = spark.sql("SHOW CREATE TABLE spark_db.users")
+//    desc_table.show(false)
 
     val result = spark.sql("SELECT * FROM spark_db.users WHERE age > 30")
     result.explain(true)
-    val partitionNum = result.rdd.getNumPartitions
-    println(s"Number of partitions: $partitionNum")
     result.show(false)
+
+//    val partitionNum = result.rdd.getNumPartitions
+//    println(s"Number of partitions: $partitionNum")
 
     // Stop the Spark session
     Thread.sleep(100000) // Sleep for 100 seconds
