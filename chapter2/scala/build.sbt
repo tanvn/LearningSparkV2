@@ -8,5 +8,8 @@ scalaVersion := "2.12.18"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "3.4.4",
-  "org.apache.spark" %% "spark-sql"  % "3.4.4"
+  "org.apache.spark" %% "spark-sql"  % "3.4.4",
+  // https://mvnrepository.com/artifact/org.apache.spark/spark-hive
+  "org.apache.spark" %% "spark-hive" % "3.4.4"
 )
+
